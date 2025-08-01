@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "customFont";
+  src: url(../../proximaNova/proximanova_bold.otf) format("opentype");
+}
+
+.plinko-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.plinko {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+.plinko-wrapper {
+  position: relative;
+  height: fit-content;
+  background: url(images/plinkobg.png);
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 900px;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.plinko-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media only screen and (min-width: 901px) {
+  .plinko-container {
+    align-items: center;
+  }
+  .plinko {
+    gap: 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .plinko-left {
+    height: 100%;
+  }
+  .plinko-wrapper {
+    flex-direction: row;
+    background: url(images/plinkobg.png);
+    background-position: center center;
+    background-size: cover;
+    padding: 20px;
+    width: 750px;
+    /* border-radius: 0 2px 2px 0; */
+    /* height: 720px; */
+  }
+}
+
+/* By anuj */
+
+@media only screen and (max-width: 901px) {
+  .plinko-container {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+  }
+}
+
+.plinko-wrapper {
+  height: 684px;
+  background: #102130;
+}
+
+.plinko-container {
+  overflow: hidden;
+}
+
+/* new change for big screen */
+.plinko{
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+.plinko-left{
+width: 38%;
+align-items: self-end;
+flex-direction: unset;
+justify-content: unset;
+}
+
+.plinko-wrapper{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.plinko-left .BetActiBetActions_wrapper__f-N+Y{
+    width: 60%;
+    align-items: self-end;
+    flex-direction: unset;
+    justify-content: unset;
+}
+/* new change for big screen */
+
+/* By anuj */
+@media screen and (max-width:767px) {
+  .plinko {
+
+    gap: 0px;
+  }
+}
+
+.icon_svgSelect {
+  position: absolute;
+  width: 16px;
+  color: #b1bad3;
+  right: 12px;
+  height: 19px;
+}
