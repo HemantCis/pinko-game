@@ -8,7 +8,8 @@ import cron from "node-cron";
 import rateLimit from "express-rate-limit";
 import axios from "axios";
 import qs from "querystring";
-import { registerPlinkoHandlers } from "./helper/plinkoHandlers.js";
+import { registerPlinkoHandlers, plinkoBetResultFun } from "./helper/plinkoHandlers.js";
+
 
 const CLOUDFLARE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
 console.log(CLOUDFLARE_SECRET_KEY, "CLOUDFLARE_SECRET_KEY");
@@ -67,7 +68,15 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("depositInfo", data);
   });
 
-  registerPlinkoHandlers(socket);
+  socket.on("plinko:place_bet", async (payload) => {
+    console.log("backend Plinko Place bet payload:", payload);
+    registerPlinkoHandlers(payload);
+  });
+
+  socket.on("plinko:get_result", async (payload) => {
+    console.log("backend Plinko result payload:", payload);
+    plinkoBetResultFun(payload);
+  })
 });
 
 app.use(bodyParser.json());
