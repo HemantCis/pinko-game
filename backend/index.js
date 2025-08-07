@@ -175,7 +175,7 @@ app.post("/api/verify-captcha", async (req, res) => {
 //     timezone: "Asia/Seoul",
 //   }
 // );
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 server.listen(PORT, () => {
   console.log(`Server is working on ${PORT}`);
 });

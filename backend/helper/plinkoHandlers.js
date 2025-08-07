@@ -13,7 +13,6 @@ import {
   getDebitedbalance,
   calculateVIPLevel,
 } from "../helper/userHelper.js";
-import { i18next } from '../i18n.js';
 import { Sequelize } from 'sequelize';
 
 import { io } from "socket.io-client";
@@ -36,6 +35,7 @@ const acquireMemberLock = async (memberId) => {
 };
 
 export const registerPlinkoHandlers = async (payload) => {
+  console.log("value come into that feature");
   const t = i18next.getFixedT(payload.lang);
   let transaction;
   let releaseLock;
